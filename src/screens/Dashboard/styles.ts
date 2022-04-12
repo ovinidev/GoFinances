@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { Feather } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { FlatList, FlatListProps } from 'react-native';
+import { TransactionProps } from '.';
 
 export const Container = styled.View`
   ${({ theme }) => css`
@@ -13,7 +15,7 @@ export const Container = styled.View`
 export const Header = styled.View`
   ${({ theme }) => css`
     width: 100%;
-    height: ${RFPercentage(42)}px;
+    height: ${RFValue(113)}px;
     background: ${theme.colors.primary};
   `}
 `;
@@ -76,5 +78,23 @@ export const CardContainer = styled.ScrollView.attrs({
     width: 100%;
     position: absolute;
     top: ${RFPercentage(20)}px;
-  `}
+  `};
+`
+
+export const Title = styled.Text`
+  font-family: ${({theme}) => theme.fonts.medium};
+  font-size: ${RFValue(18)}px;
+  margin: 0 0 ${RFValue(12)}px ${RFValue(24)}px;
+`
+
+export const Transactions = styled.View`
+  margin-top: ${RFPercentage(40)}px;
+  padding: 0 ${RFValue(24)}px;
+`
+
+export const TransactionList = styled(
+  FlatList as new (props: FlatListProps<TransactionProps>) => FlatList<TransactionProps>
+  ).attrs({
+  showsVerticalScrollIndicator: false,
+})`
 `
