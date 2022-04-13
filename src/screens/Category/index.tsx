@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FlatList } from "react-native";
 import { Button } from "../../components/Button";
 import { categories } from "../../utils/categories";

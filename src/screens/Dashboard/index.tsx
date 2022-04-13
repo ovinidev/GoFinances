@@ -12,7 +12,6 @@ import {
   CardContainer,
   TransactionList,
   Transactions,
-  Title
 } from './styles';
 
 export interface TransactionProps {

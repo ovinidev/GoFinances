@@ -11,10 +11,10 @@ import {
 
 import { theme } from './src/global/styles/theme';
 
-import { Dashboard } from './src/screens/Dashboard';
-import { Register } from './src/screens/Register';
-import { Category } from './src/screens/Category';
 import { StatusBar } from 'expo-status-bar';
+
+import { NavigationContainer } from '@react-navigation/native'
+import { AppRoutes } from './src/routes/app.routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,7 +31,9 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Container>
         <StatusBar translucent />
-        <Register />
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
       </Container>
     </ThemeProvider>
   );
